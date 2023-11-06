@@ -1,4 +1,4 @@
-# Kaavish Proposal template
+# Kaavish Software Requirements Specification
 
 Please make the following edits in `main.tex` only.
 - edit information about group members in the preamble
