@@ -11,13 +11,17 @@
 \addbibresource{references.bib}
 \usepackage{geometry}
 \usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{hyperref}
+\usepackage{pgfplots}
 
 % Set the page margins as per your requirement
 \geometry{
-  top=1in,
-  bottom=1in,
-  left=0.65in, % Increase the left margin
-  right=0.65in, % Increase the right margin
+    top=1in,
+    bottom=1in,
+    left=0.65in, % Increase the left margin
+    right=0.65in, % Increase the right margin
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,45 +61,75 @@
 % Cover page.
 \input{cover}
 
+\tableofcontents
+\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DATA: Populate the rest of the document as instructed.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-This Software Requirements Specification (SRS) Document is a blueprint for the development of our final year project's product, Bill-E, a mobile application to calculate electricity consumption that aims to serve the public with insights about their electricity bill and the units they consume over the course of a specified period. This document will outline the project plan, including the goals and objectives. It will also delve deep into the functional and non-functional requirements that we aim to meet whilst creating this software solution. It is intended for all the various stakeholders including the students, supervisors, testers, and end users, ensuring a common understanding of the scope and the behavior of the software.
+This Software Requirements Specification (SRS) Document is a blueprint for the
+development of our final year project's product, Bill-E, a mobile application
+to calculate electricity consumption that aims to serve the public with
+insights about their electricity bill and the units they consume over the
+course of a specified period. This document will outline the project plan,
+including the goals and objectives. It will also delve deep into the functional
+and non-functional requirements that we aim to meet whilst creating this
+software solution. It is intended for all the various stakeholders including
+the students, supervisors, testers, and end users, ensuring a common
+understanding of the scope and the behavior of the software.
 
 \subsection{Purpose}
-The primary purpose of this SRS document is to define the functionality and features of the software and have a set of requirements in order to guide the development team. It will also help to plan, estimate, and allocate resources effectively. 
+The primary purpose of this SRS document is to define the functionality and
+features of the software and have a set of requirements in order to guide the
+development team. It will also help to plan, estimate, and allocate resources
+effectively.
 
 \subsection{Scope}
 The scope of this document will cover the following key elements of Bill-E.
 \begin{itemize}
     \item \textbf{Functionality and features:} A detailed description of the features and functionality of the application with a clear understanding of the software's expectations outlining the operations, interactions, and capabilities that the stakeholders may experience.
-    \item \textbf{Requirements Guidance} This SRS document aims to establish an unambiguous set of requirements, which will serve as a guideline for the developers. These will include the functional and the non-functional requirements, as well as other important system requirements. All these are important for the designing, developing, and testing of the software. 
+    \item \textbf{Requirements Guidance} This SRS document aims to establish an unambiguous set of requirements, which will serve as a guideline for the developers. These will include the functional and the non-functional requirements, as well as other important system requirements. All these are important for the designing, developing, and testing of the software.
     \item  \textbf{Project Planning and Resource Allocation:} By having a  clear set of requirements, the SRS document will aid the team in effectively planning the project and allocating the required resources.
 \end{itemize}
- 
+
 \section{Project Plan}
-This section is where the different goals and objectives of the project are clearly stated and broken down into tasks. These tasks are then given a time frame and they are allotted the required resources. It is essential to have a project plan as it gives all the stakeholders, including student developers and supervisors a clear outline of the timelines and deliverables. An added part in this section is the risks that are involved in all the various parts of the development journey of the project. 
+This section is where the different goals and objectives of the project are
+clearly stated and broken down into tasks. These tasks are then given a time
+frame and they are allotted the required resources. It is essential to have a
+project plan as it gives all the stakeholders, including student developers and
+supervisors a clear outline of the timelines and deliverables. An added part in
+this section is the risks that are involved in all the various parts of the
+development journey of the project.
 
 \subsection{Objectives}
- 
+
 \begin{itemize}
     \item \textbf{Project Goals:} The main goal of this project is to create a software solution that serves as a medium for Pakistanis, specifically from Karachi, to be able to predict their electricity consumption based on their usage patterns. In addition, the application aims to provide recommendations to the users to reduce their electricity bill units. Providing users with analytics of their usage serves as the secondary biggest goal of the software.
     \item \textbf{Deliverable:}
-    \begin{itemize}
-        \item Mobile Application: A fully functional mobile application tailored to the Pakistani context, enabling electricity consumption prediction and billing estimation.
-        \item Prediction Model: An accurate predictive model that predicts the Household electricity consumption and is integrated with the Mobile App. 
-        \item Optimization model: A model which able to provide suggestions and facts to optimize electricity consumption to Users and is based on user inputs, predictions from the prediction model, and few other variables
-    \end{itemize}
+          \begin{itemize}
+              \item Mobile Application: A fully functional mobile application tailored to the
+                    Pakistani context, enabling electricity consumption prediction and billing
+                    estimation.
+              \item Prediction Model: An accurate predictive model that predicts the Household
+                    electricity consumption and is integrated with the Mobile App.
+              \item Optimization model: A model which able to provide suggestions and facts to
+                    optimize electricity consumption to Users and is based on user inputs,
+                    predictions from the prediction model, and few other variables
+          \end{itemize}
     \item \textbf{Success Criteria:} The success criteria for Bill-E can be defined as follows:
-    \begin{itemize}
-        \item An intuitive and interactive mobile application with an easy-to-use UI/UX keeping our target audience in mind.
-        \item The Prediction Model is able to predict household consumption within a margin of 7-10\% error.
-        \item The Optimization Model is smart enough to understand the user's usage and is able to suggest doable actions to optimize the electricity consumption of the household.
-        \item The analytics provided to the user proves to be helpful to the user to keep track of the user's usage. 
-    \end{itemize}
+          \begin{itemize}
+              \item An intuitive and interactive mobile application with an easy-to-use UI/UX
+                    keeping our target audience in mind.
+              \item The Prediction Model is able to predict household consumption within a margin
+                    of 7-10\% error.
+              \item The Optimization Model is smart enough to understand the user's usage and is
+                    able to suggest doable actions to optimize the electricity consumption of the
+                    household.
+              \item The analytics provided to the user proves to be helpful to the user to keep
+                    track of the user's usage.
+          \end{itemize}
 
-    
 \end{itemize}
 
 \subsection{Tasks and Timeline}
@@ -128,7 +162,6 @@ This section is where the different goals and objectives of the project are clea
 \end{itemize}
 % \subsection{Timeline}
 
-
 % \begin{itemize}
 %     \item Project Schedule:
 %     \item Milestones:
@@ -137,45 +170,57 @@ This section is where the different goals and objectives of the project are clea
 \subsection{Risks}
 The risks involved with this project are as follows:
 \begin{itemize}
-    \item The data collection process for the prediction model is not successful and augmented data is used to a large extent. 
-    \item The introduction of the augmented data would mean compromising on the accuracy of the prediction model which is central to our project. 
-    \item The solution caters to a specific Socio-economic group rendering it useless to the large masses which are the most impacted when it comes to electricity bill hikes.
+    \item The data collection process for the prediction model is not successful and
+          augmented data is used to a large extent.
+    \item The introduction of the augmented data would mean compromising on the accuracy
+          of the prediction model which is central to our project.
+    \item The solution caters to a specific Socio-economic group rendering it useless to
+          the large masses which are the most impacted when it comes to electricity bill
+          hikes.
 \end{itemize}
 
-
-\section{Functional Requirements}
-Functional Requirements are a category of software requirements that describe what a software system or application is expected to do focusing on the interaction between the systems. These requirements detail the specific actions the software should be able to perform. this includes the inputs and the outputs, data processing, and user interface. They are essential for the design and development of the software. Following are the main functions of our software, Bill-E.
-\subsection{Profile Management}
+\section{Software Requirements Specification}
+\subsection{Functional Requirements}
+Functional Requirements are a category of software requirements that describe
+what a software system or application is expected to do focusing on the
+interaction between the systems. These requirements detail the specific actions
+the software should be able to perform. this includes the inputs and the
+outputs, data processing, and user interface. They are essential for the design
+and development of the software. Following are the main functions of our
+software, Bill-E.
+\subsubsection{Profile Management}
 \begin{enumerate}
     \item \textbf{User Registration and Deletion}
-    \begin{itemize}
-        \item Users can create an account with personal information
-        \item Users can delete their accounts if necessary
-    \end{itemize}
-    
+          \begin{itemize}
+              \item Users can create an account with personal information
+              \item Users can delete their accounts if necessary
+          \end{itemize}
+
     \item \textbf{Room Breakdown}
-    \begin{itemize}
-        \item Users will define rooms within their house and their structure. 
-        \item User can add or remove rooms.
-\end{itemize}
+          \begin{itemize}
+              \item Users will define rooms within their house and their structure.
+              \item User can add or remove rooms.
+          \end{itemize}
     \item \textbf{Appliances Management}
-        \begin{itemize}
-            \item Users can add and remove heavy, in-use appliances and specify their usage hours.
-            \item Users can update the appliances and their usage hours.
-        \end{itemize}
+          \begin{itemize}
+              \item Users can add and remove heavy, in-use appliances and specify their usage
+                    hours.
+              \item Users can update the appliances and their usage hours.
+          \end{itemize}
     \item \textbf{Past Billing Information}
-        \begin{itemize}
-            \item Users will input usage units for past months to enhance energy consumption predictions.
-        \end{itemize}
+          \begin{itemize}
+              \item Users will input usage units for past months to enhance energy consumption
+                    predictions.
+          \end{itemize}
 
     \item \textbf{User Profile Update}
-    \begin{itemize}
-        \item Users can edit and update their profile information.
-    \end{itemize}
-        
+          \begin{itemize}
+              \item Users can edit and update their profile information.
+          \end{itemize}
+
 \end{enumerate}
 
-\subsection{Electricity Consumption Forecast}
+\subsubsection{Electricity Consumption Forecast}
 \begin{enumerate}
     \item \textbf{Predicted Electricity Consumption}
           \begin{itemize}
@@ -196,102 +241,125 @@ Functional Requirements are a category of software requirements that describe wh
           \end{itemize}
 \end{enumerate}
 
-\subsection{Electricity Conversation Patterns}
+\subsubsection{Electricity Conversation Patterns}
 Users will get the optimal electricity usage pattern, according to their
 household information.
 
-\subsection{Analytics}
+\subsubsection{Analytics}
 Users can access various analytics related to their electricity consumption.
 
 \begin{enumerate}
     \item \textbf{Highest Room Usage}
-    \begin{itemize}
-        \item Users can view the room that has consumed the most electricity.
-    \end{itemize}
+          \begin{itemize}
+              \item Users can view the room that has consumed the most electricity.
+          \end{itemize}
 
     \item \textbf{Highest Usage Appliance}
-    \begin{itemize}
-        \item Users can identify the appliance that has consumed the most electricity.
-    \end{itemize}
+          \begin{itemize}
+              \item Users can identify the appliance that has consumed the most electricity.
+          \end{itemize}
 
     \item \textbf{Peak Consumption Time}
-    \begin{itemize}
-        \item Users can determine their peak electricity consumption time.
-    \end{itemize}
+          \begin{itemize}
+              \item Users can determine their peak electricity consumption time.
+          \end{itemize}
 
     \item \textbf{Electricity Conservation Tips}
-    \begin{itemize}
-        \item Users can access and view various tips/facts for conserving electricity.
-    \end{itemize}
+          \begin{itemize}
+              \item Users can access and view various tips/facts for conserving electricity.
+          \end{itemize}
 
     \item \textbf{Bill Alerts}
-    \begin{itemize}
-        \item Users will receive alerts if their electricity usage is projected to exceed a specific threshold just above the current slab rate.
-    \end{itemize}
-\end{enumerate}    
+          \begin{itemize}
+              \item Users will receive alerts if their electricity usage is projected to exceed a
+                    specific threshold just above the current slab rate.
+          \end{itemize}
+\end{enumerate}
 
-\section{Non-Functional Requirements}
+\subsection{Non-Functional Requirements}
 Our app aims for the following non-functional requirements:
-\subsection{Performance and Robustness}
-The app should run smoothly. The prediction step should respond within 5-7 seconds. The app should be able to handle a large number of users. The API should be able to handle at least 100 requests per minute.
+\subsubsection{Performance and Robustness}
+The app should run smoothly. The prediction step should respond within 5-7
+seconds. The app should be able to handle a large number of users. The API
+should be able to handle at least 100 requests per minute.
 
-\subsection{Security}
-User data should be secure and one user's data should not be accessible to another user. Sensitive data such as passwords should be encrypted. The user data should not be accessible by a third party.
+\subsubsection{Security}
+User data should be secure and one user's data should not be accessible to
+another user. Sensitive data such as passwords should be encrypted. The user
+data should not be accessible by a third party.
 
-\subsection{Usability}
-The app should have an intuitive UI. People of every age group should be able to navigate through the app without much help.
+\subsubsection{Usability}
+The app should have an intuitive UI. People of every age group should be able
+to navigate through the app without much help.
 
-\subsection{Compatibility}
+\subsubsection{Compatibility}
 The app should be compatible with both Android and iOS devices.
 
-\subsection{Data Storage and Retention}
-Ensure that the data collected is organized and stored in a secure manner. The data retrieval should be streamlined. The data is backed up and can be restored in case of any data loss. 
+\subsubsection{Data Storage and Retention}
+Ensure that the data collected is organized and stored in a secure manner. The
+data retrieval should be streamlined. The data is backed up and can be restored
+in case of any data loss.
 
-\subsection{Scalability}
-The app should be deployed on a scalable platform. The app should be able to handle a large number of users and should be able to scale up or down according to the number of users.
+\subsubsection{Scalability}
+The app should be deployed on a scalable platform. The app should be able to
+handle a large number of users and should be able to scale up or down according
+to the number of users.
 
-\subsection{Compliance}
-The app should comply with the laws and regulations of Pakistan. The app should comply with the privacy laws of Pakistan.
+\subsubsection{Compliance}
+The app should comply with the laws and regulations of Pakistan. The app should
+comply with the privacy laws of Pakistan.
 
-\subsection{Reliability}
-The app should be reliable and should be equipped to handle any errors that may occur. The app should be able to handle any errors gracefully and should not crash.
+\subsubsection{Reliability}
+The app should be reliable and should be equipped to handle any errors that may
+occur. The app should be able to handle any errors gracefully and should not
+crash.
 
-\section{Usecase Diagram and Description}
+\subsection{Usecase Diagram and Description}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{usecase.png}
+    \includegraphics[width=0.6\textwidth]{images/usecase.png}
     \caption{Use Case Diagram}
     \label{fig: Use Case Diagram}
 \end{figure}
 
-\subsection{Description:} The use case diagram serves the important purpose of visually giving a basic rundown of how the App will function for different Stakeholders. The Box indicates the boundary of the Applications and objects within the box are basically functional requirements of the application shown visually.
+\subsubsection{Description:} The use case diagram serves the important purpose of visually giving a basic
+rundown of how the App will function for different Stakeholders. The Box
+indicates the boundary of the Applications and objects within the box are
+basically functional requirements of the application shown visually.
 \begin{itemize}
     \item \textbf{Purpose: } The purpose of this Use case Diagram is to give an overview of all the Actors and how the interaction with the software will look like. The Use case diagram acts like a visual tool that gives a topological perspective of all different types of interactions and relationships.
-    \item \textbf{Actors:} Actors are all the external entities involved in the operations of the App. In our Use case diagram, we have 4 different actors. 
-    \begin{itemize}
-        \item The user: The user is the primary Actor of the application. they will interact will all the different features in the App. They will provide inputs, be able to see the analytics, sign up, log in, and log out.
-        \item The Admin: Admin will be the Actors who will only be responsible for the management of the users.
-        \item Predictive Model: It will be the Main model which will be trained and here is where the forecasted/ predicted results of the electricity consumption will come from.
-        \item Optimization Algorithm: This will be the added model/Algorithm that will be responsible for recommending different actions to users in order to make their electricity consumption as optimal as possible.
-    \end{itemize}
+    \item \textbf{Actors:} Actors are all the external entities involved in the operations of the App. In our Use case diagram, we have 4 different actors.
+          \begin{itemize}
+              \item The user: The user is the primary Actor of the application. they will interact
+                    will all the different features in the App. They will provide inputs, be able
+                    to see the analytics, sign up, log in, and log out.
+              \item The Admin: Admin will be the Actors who will only be responsible for the
+                    management of the users.
+              \item Predictive Model: It will be the Main model which will be trained and here is
+                    where the forecasted/ predicted results of the electricity consumption will
+                    come from.
+              \item Optimization Algorithm: This will be the added model/Algorithm that will be
+                    responsible for recommending different actions to users in order to make their
+                    electricity consumption as optimal as possible.
+          \end{itemize}
     \item \textbf{Use Cases:} Use cases represent all the various functionalities of the software. Each use case represents its specified interaction
     \item \textbf{Associations:} The associations are represented by arrows, that simply signify an interaction between an actor and the use case.
     \item \textbf{System Boundary:} The system boundary visually shows which parts of the entire interactive experience lie within the system and which lie outside.
 \end{itemize}
 
-
-\section{System Diagram and Description:} 
+\subsection{System Diagram and Description:}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{system.png}
+    \includegraphics[width=0.8\textwidth]{images/system.png}
     \caption{Use Case Diagram}
     \label{fig: System Diagram}
 \end{figure}
 
-\subsection{Description}
-The system diagram illustrates the various interfaces of the final design of our project, which consists of four main components:
+\subsubsection{Description}
+The system diagram illustrates the various interfaces of the final design of
+our project, which consists of four main components:
 
 \begin{enumerate}
     \item Mobile Application
@@ -300,13 +368,65 @@ The system diagram illustrates the various interfaces of the final design of our
     \item Computational Models
 \end{enumerate}
 
-The mobile application is the primary component through which users will interact with the system. Initially, users will be prompted to sign up or log in to the application. User credentials will be authenticated, as security is a critical non-functional requirement for our mobile application. After successful login, first-time users will be asked to provide data on their appliance usage to predict their electricity bill based on subsequent usage. The prediction model will use this usage data to forecast electricity consumption. Subsequently, an optimization plan for the user's electricity usage will be provided based on the predicted units. Additionally, users will have access to analytics, allowing them to review their electricity consumption for the previous month and analyze room-wise electricity usage.
+The mobile application is the primary component through which users will
+interact with the system. Initially, users will be prompted to sign up or log
+in to the application. User credentials will be authenticated, as security is a
+critical non-functional requirement for our mobile application. After
+successful login, first-time users will be asked to provide data on their
+appliance usage to predict their electricity bill based on subsequent usage.
+The prediction model will use this usage data to forecast electricity
+consumption. Subsequently, an optimization plan for the user's electricity
+usage will be provided based on the predicted units. Additionally, users will
+have access to analytics, allowing them to review their electricity consumption
+for the previous month and analyze room-wise electricity usage.
 
-Users revisiting the application will be able to view their analytics and the optimization plan provided to them previously to reduce their electricity bill. In addition, users at all times will have the power to change their usage patterns, since the patterns will be different for each season based on different factors. Once the user usage data is updated, the prediction model will calculate the units based on the newly inputted usage data. 
+Users revisiting the application will be able to view their analytics and the
+optimization plan provided to them previously to reduce their electricity bill.
+In addition, users at all times will have the power to change their usage
+patterns, since the patterns will be different for each season based on
+different factors. Once the user usage data is updated, the prediction model
+will calculate the units based on the newly inputted usage data.
 
+\section{Software Design Specifications}
+\subsection{System Architecture}
+The system architecture is the structural design of the software system. It
+includes the software components, the externally visible properties of those
+components, and the relationships among them. The system architecture serves as
+a blueprint for the system and the developers. It is essential to have a system
+architecture as it gives a clear understanding of the system and its
+components. It also helps in the development of the system as it gives a
+clearer picture of the system and its components. The system architecture of
+our software, Bill-E, is as follows:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/architecture.png}
+    \caption{System Architecture}
+    \label{fig: System Architecture}
+\end{figure}
+
+\subsubsection{Backend}
+There are four main components of the backend of our software. The first
+component is the database. The database is where all the data is stored
+
+\subsection{Database Design}
+The database design is the process of producing a detailed data model of a
+database. This data model contains all the needed logical and physical design
+choices and physical storage parameters needed to generate a design. The
+database design is essential as it helps in the development of the database and
+the database management system. The database design of our software, Bill-E, is
+as follows:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/data.png}
+    \caption{Database Design}
+    \label{fig: Database Design}
+\end{figure}
+
+\subsection{User Interface Design}
 
 \printbibliography
-
 
 % External advisor undertaking.
 %\input{external}
